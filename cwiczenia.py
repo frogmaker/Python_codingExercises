@@ -35,26 +35,98 @@
 
 
 # ex5
+#
+# i = 0
+#
+# sum: int = 0
+#
+# while i < 3:
+#
+#     number = int(input("your number to sum: "))
+#
+#     if number > 0 and number % 2 == 0:
+#
+#         sum += number
+#
+#         i += 1
+#
+#     else:
+#
+#         print("wrong input")
+#
+#         continue
+#
+# print("sum equals: ", sum)
+#
 
-i = 0
+# ex_listyin
 
-sum: int = 0
+# in
+# not in
+# Operacje na listach
 
-while i < 3:
+imiona = ["Arkadiusz", "Wioletta", "Karol", "Kuba", "Adrian", "Wojtek"]
+liczby = [3, 12, 24, 7, -8]
 
-    number = int(input("your number to sum: "))
+print("Arkadiusz" in imiona) #True
 
-    if number > 0 and number % 2 == 0:
+if ("Wojtek" in imiona):
+    print("Hi Wojtek")
 
-        sum += number
+if (2 not in liczby):
+    print("there is not 2 in list")
+else:
+    print("list liczby contains number 2")
 
-        i += 1
+print(3 * liczby)      # [3, 12, 24, 7, -8, 3, 12, 24, 7, -8, 3, 12, 24, 7, -8]
 
-    else:
+print([4, 8, 16, 32] + liczby)
 
-        print("wrong input")
+print(liczby + [4, 8, 16, 32])
+print(liczby + ["one", "two", "ten"])
 
-        continue
+matrix = ["jeden", "dwa", "trzy",
+"one", "two", "three",
+"ein", "zwei", "drei"
+]
 
-print("sum equals: ", sum)
+print(matrix[8]) #drei
 
+
+#len() - długość - length
+#.append - dodać
+#.extend - rozszerzyć
+#.insert(index, co) - wstawić
+#.index - indeks danego el.
+#sort(reverse=False) - sortuj rosnąco
+#max()
+#min()
+#.count - ile razy coś wystąpi
+#.pop - usuń ostatni el.
+#.remove - usuń pierwsze wystąpienie
+#.clear - wyczyść liste
+#.reverse - zamień kolejność
+
+
+lista1 = [54, 1, -2, 20, 1]
+lista2 = ["Arkadiusz", "Wioletta"]
+
+print(len(lista1))
+lista1.append(4)
+print(lista1)
+lista1.extend([-4, -66, -33, -1000])
+print(lista1)
+
+lista2.insert(1, "kuba")
+print(lista2)
+
+print(lista1.index(54)) #0
+
+lista1.reverse()
+print(lista1)
+
+lista1.sort(reverse=True)
+print(lista1)
+
+ileOne = lista1.count(1)
+print(ileOne)
