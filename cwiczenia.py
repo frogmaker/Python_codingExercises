@@ -130,3 +130,9 @@ print(lista1)
 
 ileOne = lista1.count(1)
 print(ileOne)
+
+listtest = [0, 1, 2, [30, 31, 32]]
+print(listtest)
+print(listtest[3])
+print(listtest[3][1]) #działa!
+
