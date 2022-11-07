@@ -64,33 +64,33 @@
 # in
 # not in
 # Operacje na listach
-
-imiona = ["Arkadiusz", "Wioletta", "Karol", "Kuba", "Adrian", "Wojtek"]
-liczby = [3, 12, 24, 7, -8]
-
-print("Arkadiusz" in imiona) #True
-
-if ("Wojtek" in imiona):
-    print("Hi Wojtek")
-
-if (2 not in liczby):
-    print("there is not 2 in list")
-else:
-    print("list liczby contains number 2")
-
-print(3 * liczby)      # [3, 12, 24, 7, -8, 3, 12, 24, 7, -8, 3, 12, 24, 7, -8]
-
-print([4, 8, 16, 32] + liczby)
-
-print(liczby + [4, 8, 16, 32])
-print(liczby + ["one", "two", "ten"])
-
-matrix = ["jeden", "dwa", "trzy",
-"one", "two", "three",
-"ein", "zwei", "drei"
-]
-
-print(matrix[8]) #drei
+#
+# imiona = ["Arkadiusz", "Wioletta", "Karol", "Kuba", "Adrian", "Wojtek"]
+# liczby = [3, 12, 24, 7, -8]
+#
+# print("Arkadiusz" in imiona) #True
+#
+# if ("Wojtek" in imiona):
+#     print("Hi Wojtek")
+#
+# if (2 not in liczby):
+#     print("there is not 2 in list")
+# else:
+#     print("list liczby contains number 2")
+#
+# print(3 * liczby)      # [3, 12, 24, 7, -8, 3, 12, 24, 7, -8, 3, 12, 24, 7, -8]
+#
+# print([4, 8, 16, 32] + liczby)
+#
+# print(liczby + [4, 8, 16, 32])
+# print(liczby + ["one", "two", "ten"])
+#
+# matrix = ["jeden", "dwa", "trzy",
+# "one", "two", "three",
+# "ein", "zwei", "drei"
+# ]
+#
+# print(matrix[8]) #drei
 
 
 #len() - długość - length
@@ -107,32 +107,66 @@ print(matrix[8]) #drei
 #.clear - wyczyść liste
 #.reverse - zamień kolejność
 
+#
+# lista1 = [54, 1, -2, 20, 1]
+# lista2 = ["Arkadiusz", "Wioletta"]
+#
+# print(len(lista1))
+# lista1.append(4)
+# print(lista1)
+# lista1.extend([-4, -66, -33, -1000])
+# print(lista1)
+#
+# lista2.insert(1, "kuba")
+# print(lista2)
+#
+# print(lista1.index(54)) #0
+#
+# lista1.reverse()
+# print(lista1)
+#
+# lista1.sort(reverse=True)
+# print(lista1)
+#
+# ileOne = lista1.count(1)
+# print(ileOne)
+#
+# listtest = [0, 1, 2, [30, 31, 32]]
+# print(listtest)
+# print(listtest[3])
+# print(listtest[3][1]) #działa!
 
-lista1 = [54, 1, -2, 20, 1]
-lista2 = ["Arkadiusz", "Wioletta"]
+# ex30_krotki
 
-print(len(lista1))
-lista1.append(4)
-print(lista1)
-lista1.extend([-4, -66, -33, -1000])
-print(lista1)
+# krotka = (1, 42, 12, -4) # od listy różni się nawiasami: [] vs. () lub brak nawiasów; krotki nie da się zmienić
+#
+# print(krotka[1])
+# krotka[1] = 0  # błąd TypeError: 'tuple' object does not support item assignment
 
-lista2.insert(1, "kuba")
-print(lista2)
-
-print(lista1.index(54)) #0
-
-lista1.reverse()
-print(lista1)
-
-lista1.sort(reverse=True)
-print(lista1)
-
-ileOne = lista1.count(1)
-print(ileOne)
-
-listtest = [0, 1, 2, [30, 31, 32]]
-print(listtest)
-print(listtest[3])
-print(listtest[3][1]) #działa!
+# ex31_słownik
+# dictionary - słownik KLUCZ - WARTOŚĆ
+# pokoje = {49: 'Arkadiusz Włodarczyk', 69: 'Wioletta Włodarczyk'}
+#
+# a = {'imie': 'Arkadiusz', 'nazwisko': 'Włodarczyk'}
+#
+# print(pokoje[49])
+# print(pokoje.get(49))
+# pokoje[50] = 'Jan Kowalski'
+# print(pokoje)
+#
+# pokoje.update({30: 1000000000})
+# print(pokoje)
+#
+# del(pokoje[30])
+# print(pokoje)
+#
+# autor = pokoje.pop(49)
+# print(pokoje)
+# print(autor)
+#
+# ostatni = pokoje.popitem()
+# print(pokoje)
+# print(ostatni)
+#
+# print(len(pokoje))
 
