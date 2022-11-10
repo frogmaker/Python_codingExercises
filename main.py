@@ -42,10 +42,10 @@ print (int(test1))
 """
 instrukcje warunkowe
 """
-a,b= 10,5
-if (10>5):
+a, b = 10, 5
+if 10 > 5:
     print("warunek spełniony") #wcięcia to 4 spacje!
-elif(10<5):
+elif 10 < 5:
     print("Tab to nie zawsze 4 spacje!")
 else:
     print("coś innego")
