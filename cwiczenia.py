@@ -170,3 +170,70 @@
 #
 # print(len(pokoje))
 
+#32.sets/zbiory
+#
+# """
+#      czy:   el. unikalne | kolejność | zmiana konkretnego el. | nowe elementy
+# listy          NIE           TAK             TAK                   TAK
+# krotki         NIE           TAK             NIE                   NIE
+# słowniki       TAK           NIE             TAK                   TAK
+# zbiory         TAK           NIE             NIE                   TAK
+#
+#         ZBIORY: BONUS w postaci | & - ^
+# """
+#
+# A = {1, 4, 20, -4, 20}
+# print(A) #posortowany i unikalny
+#
+#
+# B = {1, 4, 30, 48}
+#
+# print(A.issubset(B))
+#
+# print(A & B)
+# print(A | B)
+# print("/////")
+# print(A - B)
+# print(B - A)
+# print("/////")
+# print(A ^ B) #wyklucza wspólne wartości (alternatywa wykluzająca)
+#
+# C = [1, 22, 22, 4, 0, -1]
+# d = set(C)
+# print(C)
+# print(d)
+# print(A & d)
+#
+# print(A)
+# A.discard(4)
+# print(A)
+
+# 33# TYPY ZAGNIEŻDZONE
+
+imie = "Arkadiusz"
+wiek = 29
+plec = "mężczyzna"
+
+imie2 = "Wioletta"
+wiek2 = 23
+plec2 = "kobieta"
+
+
+osoba1 = ('Arkadiusz', 29, 'mężczyzna')
+osoba2 = ('Wioletta', 23, 'kobieta')
+osoba3 = ('Kuba', 33, 'mężczyzna')
+
+listaGosci = {
+                ('Arkadiusz', 28, 'mężczyzna'),
+                ('Wioletta', 22, 'kobieta'),
+                ('Kuba', 32, 'mężczyzna')
+             }
+listaGosci2 = {
+                ('Arkadiusz', 28, 'mężczyzna'),
+                ('W', 22, 'kobieta'),
+                ('K', 32, 'mężczyzna')
+             }
+
+listaGosci3 = listaGosci & listaGosci2
+
+print(listaGosci3)
