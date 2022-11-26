@@ -25,6 +25,13 @@ print(sys.getsizeof(evenNumbersGenerator))
 print(sum(evenNumbersGenerator)) #suma liczb powoływanych przez generator
 
 zadanie = (item ** 2
-           for item in range(100)
+           for item in range(101)
            if item % 1 == 0)
 print(sum(zadanie))
+print(zadanie)
+
+zadanie2 = [item ** 2
+           for item in range(101)
+           if item % 1 == 0]
+print(sum(zadanie2))
+print(zadanie2)
