@@ -14,3 +14,4 @@ num = {
 
 print(numbersDivBySevenAndFive)
 print(num)
+print(num[1]) #wypisywanie po kluczu
