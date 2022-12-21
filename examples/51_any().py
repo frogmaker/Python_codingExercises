@@ -2,9 +2,15 @@
 
 
 numbers1 = [1, 3, 5, 6, 7]
-numbers2 = [1, 3, 5, 7, 9]
+numbers2 = [1, 3, 5, 7, 9, 11, 13]
 numbers3 = [2, 4, 6, 8]
 
+def compareLists(list1, list2):
+    return [numbers in list1 for numbers in list2] #pokazuje na których pozycjach listy2 są elementy zawarte w liście1
+
+
+print(compareLists(numbers1, numbers2))
+print()
 
 def anyEvenOld(list):
     for num in list:
@@ -97,6 +103,8 @@ required_skills = ['Python', 'JavaScript']
 
 def has_required_skills(person, skillsreq):
     return all([skill in person['skills'] for skill in skillsreq])
+
+
 def has_required_skills_debag(person, skillsreq):
     return [skill in person['skills'] for skill in skillsreq]
 
