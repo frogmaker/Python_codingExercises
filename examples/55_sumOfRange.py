@@ -7,10 +7,10 @@ rangeToSum: int = 5 #int(input("Podaj liczbę będącą końcem zakresu: "))
 print('sposób 1')
 def sum1(a):
     sum: int = 0
-
+    # list = []
     for number in range(a + 1):
         sum += number
-
+        # list.append(number)
     return sum
 
 print("suma liczb z podanego zakresu to: ", sum1(rangeToSum))
