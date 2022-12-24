@@ -83,3 +83,29 @@ print(finish_timer(start))
 start = time.perf_counter()
 print(sum5(234567))
 print(finish_timer(start))
+
+
+#funkcja jako zmienna _57
+def function(func):
+    func()
+
+
+def show_message():
+    print("jakaś wiadomość")
+
+
+function(show_message)
+
+
+def function_performance(func, arg):
+    start = time.perf_counter()
+    func(arg)
+    end = time.perf_counter()
+    return end - start
+
+
+print("a ", function_performance(sum1, 50000000))
+print("b ", function_performance(sum2, 50000000))
+print("c ", function_performance(sum3, 50000000))
+print("d ", function_performance(sum4, 50000000))
+print("e ", function_performance(sum5, 50000000))
