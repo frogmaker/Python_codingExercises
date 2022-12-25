@@ -121,3 +121,37 @@ print("b ", function_performance(sum2, 500000))
 print("c ", function_performance(sum3, 500000))
 print("d ", function_performance(sum4, 500000))
 print("e ", function_performance(sum5, 500000))
+
+
+#LX_ćwiczenie is_element_in?
+
+def function_with_two_arg_performance(func, arg2, arg = 30, how_many_times = 1):
+    sumOfTime: int = 0
+    for i in range(how_many_times):
+        start = time.perf_counter()
+        func(arg, arg2)
+        end = time.perf_counter()
+        sumOfTime += (end - start)
+    return sumOfTime
+
+
+setContainer = {i for i in range(100)}
+listContainer = [i for i in range(100)]
+print(setContainer)
+print(listContainer)
+
+def is_element_in(element, container):
+    for i in container:
+        if element == i:
+            return True
+    return False
+
+
+print(is_element_in(30, setContainer))
+print(is_element_in(30, listContainer))
+
+print(is_element_in(3000, setContainer))
+print(is_element_in(3000, listContainer))
+
+print("setContainer: ", function_with_two_arg_performance(is_element_in, setContainer, 3000, 5))
+print("listContainer: ", function_with_two_arg_performance(is_element_in, listContainer, 3000, 5))
