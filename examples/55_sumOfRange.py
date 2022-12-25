@@ -105,16 +105,19 @@ def show_message2(message):
 
 function2(show_message2, "inna wiadomość")
 
+#58_domyślne wartośc argumentu::np:: arg = 1
+def function_performance(func, arg, how_many_times = 1):
+    sumOfTime: int = 0
+    for i in range(how_many_times):
+        start = time.perf_counter()
+        func(arg)
+        end = time.perf_counter()
+        sumOfTime += (end - start)
+    return sumOfTime
 
-def function_performance(func, arg):
-    start = time.perf_counter()
-    func(arg)
-    end = time.perf_counter()
-    return end - start
 
-
-print("a ", function_performance(sum1, 5000000))
-print("b ", function_performance(sum2, 5000000))
-print("c ", function_performance(sum3, 5000000))
-print("d ", function_performance(sum4, 5000000))
-print("e ", function_performance(sum5, 5000000))
+print("a ", function_performance(sum1, 500000, 25))
+print("b ", function_performance(sum2, 500000))
+print("c ", function_performance(sum3, 500000))
+print("d ", function_performance(sum4, 500000))
+print("e ", function_performance(sum5, 500000))
