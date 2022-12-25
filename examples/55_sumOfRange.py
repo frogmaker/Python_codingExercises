@@ -49,10 +49,10 @@ print('sposób 5')
 
 
 def sum5(a):
-    return sum((number for number in range( a +1)))
+    return sum((number for number in range(a + 1)))
 
 print(sum5(rangeToSum))
-print((number for number in range(rangeToSum +1)))
+print((number for number in range(rangeToSum + 1)))
 
 print()
 print("ocena czasu działania kodu: ")
@@ -106,39 +106,45 @@ def show_message2(message):
 function2(show_message2, "inna wiadomość")
 
 #58_domyślne wartośc argumentu::np:: arg = 1
-def function_performance(func, arg, how_many_times = 1):
+
+
+def function_performance(func, how_many_times=1, **arg):
     sumOfTime: int = 0
+    print(arg)
+    print(arg.get("element"))
+    print(arg.get("a"))
     for i in range(how_many_times):
         start = time.perf_counter()
-        func(arg)
+        func(**arg)
         end = time.perf_counter()
         sumOfTime += (end - start)
     return sumOfTime
 
 
-print("a ", function_performance(sum1, 500000, 25))
-print("b ", function_performance(sum2, 500000))
-print("c ", function_performance(sum3, 500000))
-print("d ", function_performance(sum4, 500000))
-print("e ", function_performance(sum5, 500000))
+print("a ", function_performance(sum1, how_many_times=25, a=500000))
+print("b ", function_performance(sum2, 1, a=500000))
+print("c ", function_performance(sum3, 1, a=500000))
+print("d ", function_performance(sum4, 1, a=500000))
+print("e ", function_performance(sum5, 1, a=500000))
 
 
 #LX_ćwiczenie is_element_in?
 
-def function_with_two_arg_performance(func, arg2, arg = 30, how_many_times = 1):
-    sumOfTime: int = 0
-    for i in range(how_many_times):
-        start = time.perf_counter()
-        func(arg, arg2)
-        end = time.perf_counter()
-        sumOfTime += (end - start)
-    return sumOfTime
+# def function_with_two_arg_performance(func, arg2, arg = 30, how_many_times = 1):
+#     sumOfTime: int = 0
+#     for i in range(how_many_times):
+#         start = time.perf_counter()
+#         func(arg, arg2)
+#         end = time.perf_counter()
+#         sumOfTime += (end - start)
+#     return sumOfTime
+# ###################### rozwiązaniem jest argument wielowartościowy:: *arg
 
+setContainer = {i for i in range(1000)}
+listContainer = [i for i in range(1000)]
+# print(setContainer)
+# print(listContainer)
 
-setContainer = {i for i in range(100)}
-listContainer = [i for i in range(100)]
-print(setContainer)
-print(listContainer)
 
 def is_element_in(element, container):
     for i in container:
@@ -153,5 +159,8 @@ print(is_element_in(30, listContainer))
 print(is_element_in(3000, setContainer))
 print(is_element_in(3000, listContainer))
 
-print("setContainer: ", function_with_two_arg_performance(is_element_in, setContainer, 3000, 5))
-print("listContainer: ", function_with_two_arg_performance(is_element_in, listContainer, 3000, 5))
+# print("setContainer: ", function_with_two_arg_performance(is_element_in, setContainer, 3000, 5))
+# print("listContainer: ", function_with_two_arg_performance(is_element_in, listContainer, 3000, 5))
+print("setContainer: ", function_performance(is_element_in, how_many_times=500000, element=500, container=setContainer))
+print("listContainer: ", function_performance(is_element_in, how_many_times=500000, element=500, container=listContainer))
+
