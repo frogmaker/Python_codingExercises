@@ -14,7 +14,7 @@ cardList = ["9", "9", "9", "9",
             "Joker", "Joker"]
 
 
-random.shuffle(cardList)
+random.shuffle(cardList) #działa na oryginale
 
 print(cardList)
 
