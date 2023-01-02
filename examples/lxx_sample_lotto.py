@@ -15,26 +15,13 @@ import random
 
 def choose_random_numbers(amount, total_amount):
     lotto = []
-    i = 0
-    while i < amount:
-
-        if i == 0:
-            luck = random.choice([num for num in range(1, total_amount + 1)])
-            # print("i: ", i, ", luck: ", luck)
-            lotto.append(luck)
-        else:
-            luck = random.choice([num for num in range(1, total_amount + 1)])
-            # print("i: ", i, ", luck: ", luck)
-            lotto.append(luck)
-            # print(lotto)
-            for ii in range(i):
-                if lotto[ii] == luck:
-                    # print("przed pop: ", lotto)
+    while len(lotto) < amount:
+        luck = random.choice([num for num in range(1, total_amount + 1)])
+        lotto.append(luck)
+        if len(lotto) > 1:
+            for i in range((len(lotto)-1)):
+                if lotto[i] == luck:
                     lotto.pop()
-                    # print("po pop: ", lotto)
-                    i -= 1
-        i += 1
-
     lotto.sort()
     print("Lotto results: ", lotto)
 
