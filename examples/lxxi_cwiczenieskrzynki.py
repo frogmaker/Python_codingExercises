@@ -36,6 +36,10 @@ Pamiętaj o:
 import random
 from enum import Enum
 
+
+def find_aproximate_value(value):
+    return random.randint((value*0.5), (value*2.1))
+
 Event = Enum('Event', ['Chest', 'Empty'])
 
 eventDictionary = {
@@ -83,7 +87,7 @@ while gameLength > 0:
             print("You've drawn a CHEST")
             drawnColour = random.choices(chestColourList,chestColourProbability)[0]
             print("The chest color is", drawnColour.value)
-            gamerReward = rewardsForChests[drawnColour]
+            gamerReward = find_aproximate_value(rewardsForChests[drawnColour])
             goldAcquired = goldAcquired + gamerReward
         elif(drawnEvent == Event.Empty):
             print("You've drawn nothing, you are so unlucky!")
