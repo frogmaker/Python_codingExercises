@@ -64,6 +64,7 @@ chestColoursDictionary = {
                             Colours.Gold : 0.01
                          }
 chestColourList = tuple(chestColoursDictionary.keys())
+print(chestColourList)
 chestColourProbability = tuple(chestColoursDictionary.values())
 
 rewardsForChests = {
@@ -71,7 +72,7 @@ rewardsForChests = {
                        for reward in range(len(chestColourList))
                    }
 
-gameLength = 5
+gameLength = 1
 goldAcquired = 0
 
 print("Welcome in my game called KOMNATA")
@@ -79,13 +80,17 @@ print("""You have only 5 steps to make,
 see yourself how much gold you gonna acquire till the end!""")
 
 while gameLength > 0:
-    gamerAnswer = input("Do you want to move forward?")
+    gamerAnswer = "yes" # \input("Do you want to move forward?")
     if (gamerAnswer == "yes"):
         print("Great, let's see what you got...")
         drawnEvent = random.choices(eventList,eventProbability)[0]
         if (drawnEvent == Event.Chest):
             print("You've drawn a CHEST")
-            drawnColour = random.choices(chestColourList,chestColourProbability)[0]
+            drawnColour = random.choices(chestColourList, chestColourProbability)[0]
+            print(random.choices(chestColourList, chestColourProbability))
+            print(random.choices(chestColourList, chestColourProbability)[0])
+
+            print("drawnColour: ", drawnColour)
             print("The chest color is", drawnColour.value)
             gamerReward = find_aproximate_value(rewardsForChests[drawnColour], 50)
             goldAcquired = goldAcquired + gamerReward
@@ -99,3 +104,9 @@ while gameLength > 0:
     gameLength = gameLength - 1
 
 print("Congratulation, you have acquired: ", goldAcquired)
+
+print(10*"*", type(gameLength), "gameLength", gameLength)
+
+print("""
+
+""")
