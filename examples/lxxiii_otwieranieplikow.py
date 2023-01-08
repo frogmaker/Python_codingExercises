@@ -35,7 +35,7 @@ try:
     file.write("A")
     file.write("\n")
     #print(0/0)
-    file.write("SAMPLE ")
+    file.write("\nSAMPLE ")
     file.write("B ")
 finally:
     file.write("C ")
@@ -57,7 +57,7 @@ print(linia2)
 with open("oceany.txt", "r") as file3:
     linia3 = file3.readline()
 
-print(linia3) #ponowne otwarcie i czytanieod pierwszej linii
+print(linia3) #ponowne otwarcie i czytanie od pierwszej linii
 
 with open("oceany.txt", "r") as file3:
     ocenany = file3.readlines()
@@ -77,7 +77,7 @@ with open("oceany.txt", "r", encoding="UTF-8") as file3:
     print(file3)
     print(oceany)
     print()
-    oceany2 = file3.read().splitlines() #poza ramką odczytu, nie ma już co czytać dalej
+    oceany2 = file3.read().splitlines() #poza ramką odczytu, nie ma już co czytać dalej. rozwiązanie poniżej w sekcji LXXVII
     print(oceany2)
 
 with open("oceany.txt", "r", encoding="UTF-8") as file3:
@@ -95,3 +95,14 @@ print(listaPierwszegoWireszaWyrazowa[1])
 with open("oceany.txt", "r", encoding="UTF-8") as file4:
     for line in file4:
         print(line)
+
+# LXXVII _ zmiana wskaźnika
+
+with open("oceany.txt", "r", encoding="UTF-8") as file:
+    print(file.readline())
+    print(file.tell())
+    print(file.readline())
+    print(file.tell())
+    file.seek(10)
+    print(file.readline())
+    print(file.tell())
