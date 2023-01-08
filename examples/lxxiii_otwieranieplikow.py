@@ -45,5 +45,53 @@ finally:
 # wczytanie pliku który zawsze zostanie zamknięty, nawet po błędzie
 with open("test.txt", "a") as file2:
     file2.write("test ")
-    print(0/0)
+    #print(0/0)
 
+with open("oceany.txt", "r") as file3:
+    linia1 = file3.readline()
+    linia2 = file3.readline()
+
+print(linia1)
+print(linia2)
+
+with open("oceany.txt", "r") as file3:
+    linia3 = file3.readline()
+
+print(linia3) #ponowne otwarcie i czytanieod pierwszej linii
+
+with open("oceany.txt", "r") as file3:
+    ocenany = file3.readlines()
+
+print(ocenany)
+
+print(file3.encoding)  #niezgodność kodowania, wymagana zmiana
+
+with open("oceany.txt", "r", encoding="UTF-8") as file3:
+    ocenany = file3.readlines()
+
+print(ocenany)
+print(file3.encoding)
+
+with open("oceany.txt", "r", encoding="UTF-8") as file3:
+    oceany = file3.read()
+    print(file3)
+    print(oceany)
+    print()
+    oceany2 = file3.read().splitlines() #poza ramką odczytu, nie ma już co czytać dalej
+    print(oceany2)
+
+with open("oceany.txt", "r", encoding="UTF-8") as file3:
+    oceany3 = file3.read().splitlines()
+    print("oceany3: ", oceany3)
+
+print(oceany3[0], oceany3[3])
+print()
+print(oceany3[0][11])
+listaPierwszegoWierszaLiterowa = list(oceany3[0])
+print(listaPierwszegoWierszaLiterowa)
+listaPierwszegoWireszaWyrazowa = oceany3[0].split(" ")
+print(listaPierwszegoWireszaWyrazowa[1])
+
+with open("oceany.txt", "r", encoding="UTF-8") as file4:
+    for line in file4:
+        print(line)
