@@ -106,3 +106,39 @@ with open("oceany.txt", "r", encoding="UTF-8") as file:
     file.seek(10)
     print(file.readline())
     print(file.tell())
+
+# LXXIX - tryby mnogie
+
+"""
+Mnogie tryby otwierania plików pozwalają na wykonanie dwóch czynności jednocześnie. 
+
+
+Typy mnogie: 
+
+r + (do czytania i pisania) pozwala na wykonanie file.read oraz file.write odrazu na tym pliku, sprawdza czy dany plik istnieje i nie usuwa go.
+ 
+       with open("oceany.txt", "r+", encoding="UTF-8") as file:
+            
+
+
+w+ (do pisania i czytania) różni się od r+ tym, że usunie zawartość istniejącego pliku lub stworzy go, gdy ten nie istnieje
+
+              with open("oceany.txt", "w+", encoding="UTF-8") as file:
+             file.readline()
+
+a+ (“wieczny tryb” dopisywanie i czytanie) wskaźnik dopisywania jest zawsze na samym końcu, jeśli plik nie istniał stworzy go 
+
+       with open("oceany.txt", "a+", encoding="UTF-8") as file:
+            file.write("Ocean Arka")
+
+
+           Jeżeli chcemy w tym trybie czytać - musimy przejść do początku (0) 
+              
+            file.seek(0)
+            print(file.readline())
+            print(file.tell())
+
+
+            file.write("Ocean Arkadiusza Wielkiego")
+
+"""
