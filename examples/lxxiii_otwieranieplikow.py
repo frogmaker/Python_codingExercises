@@ -34,10 +34,16 @@ try:
     file = open("test.txt", "a")
     file.write("A")
     file.write("\n")
-    print(0/0)
-    file.write("SAMPLE")
-    file.write("B")
+    #print(0/0)
+    file.write("SAMPLE ")
+    file.write("B ")
 finally:
-    file.write("C")
+    file.write("C ")
+    file.write("\n")
     file.close()
+
+# wczytanie pliku który zawsze zostanie zamknięty, nawet po błędzie
+with open("test.txt", "a") as file2:
+    file2.write("test ")
+    print(0/0)
 
